@@ -1,7 +1,7 @@
 function Navbar() {
-  return <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+  return <nav className="navbar bg-body-tertiary">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="/">Navbar</a>
   </div>
 </nav>
 }
