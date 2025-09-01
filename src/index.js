@@ -1,15 +1,13 @@
 import ReactDOM from "react-dom/client";
-import Navbar from "./components/navbar";
+import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Card from "./components/card";
+import './index.css';
+
+
 
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <div>
-    <Navbar />
-    <Card />
-  </div>
+root.render(<App/>
 );
 
