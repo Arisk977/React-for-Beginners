@@ -10,12 +10,19 @@ class App extends Component {
 
     addItem = (amount, name, price) => {
         let currentItems = this.state.items;
-        currentItems.push({
-            amount, 
-            name, 
-            price
-        });
-        this.setState({items: currentItems});        
+
+        let existingItem = this.state.items.find(item => item.name == name);
+        if (existingItem) {
+            existingItem.amount++;
+        }
+        else {
+            currentItems.push({
+                amount,
+                name,
+                price
+            });
+        }
+        this.setState({ items: currentItems });
     }
 
     render() {
@@ -28,7 +35,7 @@ class App extends Component {
                     <Card onAdd={() => this.addItem(1, 'Pilze', 2.99)} image="mushrooms.jpg" title='Pilze' description='Pilze' />
                     <Card onAdd={() => this.addItem(1, 'Karotten', 3.49)} image="carrots.jpg" title='Karotten' description='Karotten' />
                 </div>
-                <ShoppingCart items={this.state.items}/>
+                <ShoppingCart items={this.state.items} />
             </div>
         </React.Fragment>);
     }
