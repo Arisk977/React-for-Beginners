@@ -14,6 +14,7 @@ class App extends Component {
         let existingItem = this.state.items.find(item => item.name == name);
         if (existingItem) {
             existingItem.amount++;
+            existingItem.price = (existingItem.amount * price).toFixed(2);
         }
         else {
             currentItems.push({
